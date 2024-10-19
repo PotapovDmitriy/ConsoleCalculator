@@ -16,24 +16,24 @@ public class CalculatorTests
     [Test]
     public void TestAddition()
     {
-        Assert.Equals(5, _calculator.Evaluate("2+3"));
+        Assert.That(5, Is.EqualTo(_calculator.Evaluate("2+3")));
     }
 
     [Test]
     public void TestSubtraction()
     {
-        Assert.Equals(1, _calculator.Evaluate("3-2"));
+        Assert.That(1, Is.EqualTo(_calculator.Evaluate("3-2")));
     }
     
     [Test]
     public void TestMultiplication()
     {
-        Assert.Equals(6, _calculator.Evaluate("3*2"));
+        Assert.That(6, Is.EqualTo(_calculator.Evaluate("3*2")));
     }
     
     [Test]
     public void TestDivision()
     {
-        Assert.Equals(2, _calculator.Evaluate("4/2"));
+        Assert.That(2, Is.EqualTo(_calculator.Evaluate("4/2")));
     }
 }
