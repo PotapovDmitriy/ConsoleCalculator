@@ -17,18 +17,18 @@ public class Calculator : ICalculator
     private string GetStringNumber(string expression, ref int position)
     {
         var strNumber = "";
-
         for (; position < expression.Length; position++)
         {
-            var num = expression[position];
-            if (char.IsDigit(num))
-                strNumber += num;
+            var c = expression[position];
+            if (char.IsDigit(c) || c == '.')
+                strNumber += c;
             else
             {
                 position--;
                 break;
             }
         }
+
         return strNumber;
     }
 
@@ -99,6 +99,7 @@ public class Calculator : ICalculator
                 locals.Push(Execute(currentItem, first, second));
             }
         }
+
         return locals.Pop();
     }
 }
