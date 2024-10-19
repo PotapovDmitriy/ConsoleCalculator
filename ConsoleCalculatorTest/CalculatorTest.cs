@@ -16,36 +16,36 @@ public class CalculatorTests
     [Test]
     public void TestAddition()
     {
-        Assert.That(5, Is.EqualTo(_calculator.Evaluate("2+3")));
+        Assert.That(_calculator.Evaluate("2+3"), Is.EqualTo(5));
     }
 
     [Test]
     public void TestSubtraction()
     {
-        Assert.That(1, Is.EqualTo(_calculator.Evaluate("3-2")));
+        Assert.That(_calculator.Evaluate("3-2"), Is.EqualTo(1));
     }
     
     [Test]
     public void TestMultiplication()
     {
-        Assert.That(6, Is.EqualTo(_calculator.Evaluate("3*2")));
+        Assert.That(_calculator.Evaluate("3*2"), Is.EqualTo(6));
     }
     
     [Test]
     public void TestDivision()
     {
-        Assert.That(2, Is.EqualTo(_calculator.Evaluate("4/2")));
+        Assert.That(_calculator.Evaluate("4/2"), Is.EqualTo(2));
     }
     
     [Test]
     public void TestBracket()
     {
-        Assert.That(4, Is.EqualTo(_calculator.Evaluate("2*(3-1)")));
+        Assert.That(_calculator.Evaluate("2*(3-1)"), Is.EqualTo(4));
     }   
     
     [Test]
     public void TestFloatingPointNumbers()
     {
-        Assert.That(6.1, Is.EqualTo(_calculator.Evaluate("5.1+1")));
+        Assert.That(_calculator.Evaluate("5.1+1"), Is.EqualTo(6.1));
     }
 }
