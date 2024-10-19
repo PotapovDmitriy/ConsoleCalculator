@@ -41,5 +41,11 @@ public class CalculatorTests
     public void TestBracket()
     {
         Assert.That(4, Is.EqualTo(_calculator.Evaluate("2*(3-1)")));
+    }   
+    
+    [Test]
+    public void TestFloatingPointNumbers()
+    {
+        Assert.That(6.1, Is.EqualTo(_calculator.Evaluate("5.1+1")));
     }
 }
