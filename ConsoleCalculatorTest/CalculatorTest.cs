@@ -36,4 +36,10 @@ public class CalculatorTests
     {
         Assert.That(2, Is.EqualTo(_calculator.Evaluate("4/2")));
     }
+    
+    [Test]
+    public void TestBracket()
+    {
+        Assert.That(4, Is.EqualTo(_calculator.Evaluate("2*(3-1)")));
+    }
 }
