@@ -48,4 +48,10 @@ public class CalculatorTests
     {
         Assert.That(_calculator.Evaluate("5.1+1"), Is.EqualTo(6.1));
     }
+    
+    [Test]
+    public void TestInvalidOperation()
+    {
+        Assert.Throws<ArgumentException>(() => _calculator.Evaluate("2*3((-1)"));
+    }
 }
