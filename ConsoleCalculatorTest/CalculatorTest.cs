@@ -60,4 +60,16 @@ public class CalculatorTests
     {
         Assert.Throws<ArgumentNullException>(() => _calculator.Evaluate(null));
     }
+    
+    [Test]
+    public void TestExponentiation()
+    {
+        Assert.That(_calculator.Evaluate("2^2"), Is.EqualTo(4));
+    }
+    
+    [Test]
+    public void TestOperationPriority()
+    {
+        Assert.That(_calculator.Evaluate("1+3*2^2"), Is.EqualTo(13));
+    }
 }
