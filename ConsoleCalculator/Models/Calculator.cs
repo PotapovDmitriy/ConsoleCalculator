@@ -12,7 +12,8 @@ public class Calculator : ICalculator
         { '+', new AdditionOperation() },
         { '-', new SubtractionOperation() },
         { '*', new MultiplicationOperation() },
-        { '/', new DivisionOperation() }
+        { '/', new DivisionOperation() },
+        { '^', new ExponentiationOperation() }
     };
 
     public double Evaluate(string expression)
