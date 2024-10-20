@@ -19,7 +19,7 @@ public class Calculator : ICalculator
     public double Evaluate(string expression)
     {
         expression = expression.Replace(" ", string.Empty);
-        
+        ExpressionValidatorHelper.IsValidExpression(expression, _operations.Keys.ToHashSet());
 
         var postfixExpression = ToPostfix(expression);
         return EvaluatePostfix(postfixExpression);
