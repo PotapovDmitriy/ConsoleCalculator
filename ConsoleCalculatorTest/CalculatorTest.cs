@@ -54,4 +54,10 @@ public class CalculatorTests
     {
         Assert.Throws<ArgumentException>(() => _calculator.Evaluate("2*3((-1)"));
     }
+    
+    [Test]
+    public void TestNullOperation()
+    {
+        Assert.Throws<ArgumentNullException>(() => _calculator.Evaluate(null));
+    }
 }
