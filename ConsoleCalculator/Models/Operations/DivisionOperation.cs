@@ -1,10 +1,11 @@
+using ConsoleCalculator.Enums;
 using ConsoleCalculator.Interfaces;
 
 namespace ConsoleCalculator.Models.Operations;
 
 public class DivisionOperation : IOperation
 {
-    public int Priority => 2;
+    public PriorityEnum Priority => PriorityEnum.Mid;
 
     public double Calculate(double operand1, double operand2)
     {
