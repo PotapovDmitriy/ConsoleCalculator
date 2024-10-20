@@ -3,7 +3,6 @@ using ConsoleCalculator.Helpers;
 using ConsoleCalculator.Interfaces;
 using ConsoleCalculator.Models.Operations;
 
-
 namespace ConsoleCalculator.Models;
 
 public class Calculator : ICalculator
@@ -18,7 +17,7 @@ public class Calculator : ICalculator
 
     public double Evaluate(string expression)
     {
-        expression = expression.Replace(" ", string.Empty);
+        expression = expression?.Replace(" ", string.Empty);
         ExpressionValidatorHelper.IsValidExpression(expression, _operations.Keys.ToHashSet());
 
         var postfixExpression = ToPostfix(expression);
@@ -67,7 +66,7 @@ public class Calculator : ICalculator
                     }
                 }
         }
-        
+
         while (operatorsStack.Count > 0)
         {
             postfixExpression += operatorsStack.Pop() + " ";

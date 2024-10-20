@@ -8,7 +8,7 @@ public static class ExpressionValidatorHelper
         {
             throw new ArgumentNullException(nameof(expression));
         }
-
+        
         var openBracketCount = 0;
         foreach (var c in expression)
         {
